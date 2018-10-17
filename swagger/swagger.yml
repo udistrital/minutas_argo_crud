@@ -1,0 +1,548 @@
+swagger: "2.0"
+info:
+  title: beego Test API
+  description: beego has a very cool tools to autogenerate documents for your API
+  version: 1.0.0
+  termsOfService: http://beego.me/
+  contact:
+    email: astaxie@gmail.com
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+basePath: /v1
+paths:
+  /parametro_minuta/:
+    get:
+      tags:
+      - parametro_minuta
+      description: get ParametroMinuta
+      operationId: ParametroMinutaController.Get All
+      parameters:
+      - in: query
+        name: query
+        description: Filter. e.g. col1:v1,col2:v2 ...
+        type: string
+      - in: query
+        name: fields
+        description: Fields returned. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: sortby
+        description: Sorted-by fields. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: order
+        description: Order corresponding to each sortby field, if single value, apply
+          to all sortby fields. e.g. desc,asc ...
+        type: string
+      - in: query
+        name: limit
+        description: Limit the size of result set. Must be an integer
+        type: string
+      - in: query
+        name: offset
+        description: Start position of result set. Must be an integer
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.ParametroMinuta'
+        "403":
+          description: ""
+    post:
+      tags:
+      - parametro_minuta
+      description: create ParametroMinuta
+      operationId: ParametroMinutaController.Post
+      parameters:
+      - in: body
+        name: body
+        description: body for ParametroMinuta content
+        required: true
+        schema:
+          $ref: '#/definitions/models.ParametroMinuta'
+      responses:
+        "201":
+          description: '{int} models.ParametroMinuta'
+        "403":
+          description: body is empty
+  /parametro_minuta/{id}:
+    get:
+      tags:
+      - parametro_minuta
+      description: get ParametroMinuta by id
+      operationId: ParametroMinutaController.Get One
+      parameters:
+      - in: path
+        name: id
+        description: The key for staticblock
+        required: true
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.ParametroMinuta'
+        "403":
+          description: :id is empty
+    put:
+      tags:
+      - parametro_minuta
+      description: update the ParametroMinuta
+      operationId: ParametroMinutaController.Put
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to update
+        required: true
+        type: string
+      - in: body
+        name: body
+        description: body for ParametroMinuta content
+        required: true
+        schema:
+          $ref: '#/definitions/models.ParametroMinuta'
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.ParametroMinuta'
+        "403":
+          description: :id is not int
+    delete:
+      tags:
+      - parametro_minuta
+      description: delete the ParametroMinuta
+      operationId: ParametroMinutaController.Delete
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to delete
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{string} delete success!'
+        "403":
+          description: id is empty
+  /parametro_minuta_tipo_contrato/:
+    get:
+      tags:
+      - parametro_minuta_tipo_contrato
+      description: get ParametroMinutaTipoContrato
+      operationId: ParametroMinutaTipoContratoController.Get All
+      parameters:
+      - in: query
+        name: query
+        description: Filter. e.g. col1:v1,col2:v2 ...
+        type: string
+      - in: query
+        name: fields
+        description: Fields returned. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: sortby
+        description: Sorted-by fields. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: order
+        description: Order corresponding to each sortby field, if single value, apply
+          to all sortby fields. e.g. desc,asc ...
+        type: string
+      - in: query
+        name: limit
+        description: Limit the size of result set. Must be an integer
+        type: string
+      - in: query
+        name: offset
+        description: Start position of result set. Must be an integer
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.ParametroMinutaTipoContrato'
+        "403":
+          description: ""
+    post:
+      tags:
+      - parametro_minuta_tipo_contrato
+      description: create ParametroMinutaTipoContrato
+      operationId: ParametroMinutaTipoContratoController.Post
+      parameters:
+      - in: body
+        name: body
+        description: body for ParametroMinutaTipoContrato content
+        required: true
+        schema:
+          $ref: '#/definitions/models.ParametroMinutaTipoContrato'
+      responses:
+        "201":
+          description: '{int} models.ParametroMinutaTipoContrato'
+        "403":
+          description: body is empty
+  /parametro_minuta_tipo_contrato/{id}:
+    get:
+      tags:
+      - parametro_minuta_tipo_contrato
+      description: get ParametroMinutaTipoContrato by id
+      operationId: ParametroMinutaTipoContratoController.Get One
+      parameters:
+      - in: path
+        name: id
+        description: The key for staticblock
+        required: true
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.ParametroMinutaTipoContrato'
+        "403":
+          description: :id is empty
+    put:
+      tags:
+      - parametro_minuta_tipo_contrato
+      description: update the ParametroMinutaTipoContrato
+      operationId: ParametroMinutaTipoContratoController.Put
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to update
+        required: true
+        type: string
+      - in: body
+        name: body
+        description: body for ParametroMinutaTipoContrato content
+        required: true
+        schema:
+          $ref: '#/definitions/models.ParametroMinutaTipoContrato'
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.ParametroMinutaTipoContrato'
+        "403":
+          description: :id is not int
+    delete:
+      tags:
+      - parametro_minuta_tipo_contrato
+      description: delete the ParametroMinutaTipoContrato
+      operationId: ParametroMinutaTipoContratoController.Delete
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to delete
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{string} delete success!'
+        "403":
+          description: id is empty
+  /plantilla_minuta/:
+    get:
+      tags:
+      - plantilla_minuta
+      description: get PlantillaMinuta
+      operationId: PlantillaMinutaController.Get All
+      parameters:
+      - in: query
+        name: query
+        description: Filter. e.g. col1:v1,col2:v2 ...
+        type: string
+      - in: query
+        name: fields
+        description: Fields returned. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: sortby
+        description: Sorted-by fields. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: order
+        description: Order corresponding to each sortby field, if single value, apply
+          to all sortby fields. e.g. desc,asc ...
+        type: string
+      - in: query
+        name: limit
+        description: Limit the size of result set. Must be an integer
+        type: string
+      - in: query
+        name: offset
+        description: Start position of result set. Must be an integer
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.PlantillaMinuta'
+        "403":
+          description: ""
+    post:
+      tags:
+      - plantilla_minuta
+      description: create PlantillaMinuta
+      operationId: PlantillaMinutaController.Post
+      parameters:
+      - in: body
+        name: body
+        description: body for PlantillaMinuta content
+        required: true
+        schema:
+          $ref: '#/definitions/models.PlantillaMinuta'
+      responses:
+        "201":
+          description: '{int} models.PlantillaMinuta'
+        "403":
+          description: body is empty
+  /plantilla_minuta/{id}:
+    get:
+      tags:
+      - plantilla_minuta
+      description: get PlantillaMinuta by id
+      operationId: PlantillaMinutaController.Get One
+      parameters:
+      - in: path
+        name: id
+        description: The key for staticblock
+        required: true
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.PlantillaMinuta'
+        "403":
+          description: :id is empty
+    put:
+      tags:
+      - plantilla_minuta
+      description: update the PlantillaMinuta
+      operationId: PlantillaMinutaController.Put
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to update
+        required: true
+        type: string
+      - in: body
+        name: body
+        description: body for PlantillaMinuta content
+        required: true
+        schema:
+          $ref: '#/definitions/models.PlantillaMinuta'
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.PlantillaMinuta'
+        "403":
+          description: :id is not int
+    delete:
+      tags:
+      - plantilla_minuta
+      description: delete the PlantillaMinuta
+      operationId: PlantillaMinutaController.Delete
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to delete
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{string} delete success!'
+        "403":
+          description: id is empty
+  /tipo_contrato/:
+    get:
+      tags:
+      - tipo_contrato
+      description: get TipoContrato
+      operationId: TipoContratoController.Get All
+      parameters:
+      - in: query
+        name: query
+        description: Filter. e.g. col1:v1,col2:v2 ...
+        type: string
+      - in: query
+        name: fields
+        description: Fields returned. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: sortby
+        description: Sorted-by fields. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: order
+        description: Order corresponding to each sortby field, if single value, apply
+          to all sortby fields. e.g. desc,asc ...
+        type: string
+      - in: query
+        name: limit
+        description: Limit the size of result set. Must be an integer
+        type: string
+      - in: query
+        name: offset
+        description: Start position of result set. Must be an integer
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.TipoContrato'
+        "403":
+          description: ""
+    post:
+      tags:
+      - tipo_contrato
+      description: create TipoContrato
+      operationId: TipoContratoController.Post
+      parameters:
+      - in: body
+        name: body
+        description: body for TipoContrato content
+        required: true
+        schema:
+          $ref: '#/definitions/models.TipoContrato'
+      responses:
+        "201":
+          description: '{int} models.TipoContrato'
+        "403":
+          description: body is empty
+  /tipo_contrato/{id}:
+    get:
+      tags:
+      - tipo_contrato
+      description: get TipoContrato by id
+      operationId: TipoContratoController.Get One
+      parameters:
+      - in: path
+        name: id
+        description: The key for staticblock
+        required: true
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.TipoContrato'
+        "403":
+          description: :id is empty
+    put:
+      tags:
+      - tipo_contrato
+      description: update the TipoContrato
+      operationId: TipoContratoController.Put
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to update
+        required: true
+        type: string
+      - in: body
+        name: body
+        description: body for TipoContrato content
+        required: true
+        schema:
+          $ref: '#/definitions/models.TipoContrato'
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.TipoContrato'
+        "403":
+          description: :id is not int
+    delete:
+      tags:
+      - tipo_contrato
+      description: delete the TipoContrato
+      operationId: TipoContratoController.Delete
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to delete
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{string} delete success!'
+        "403":
+          description: id is empty
+definitions:
+  models.ParametroMinuta:
+    title: ParametroMinuta
+    type: object
+    properties:
+      Activo:
+        type: boolean
+      CodigoAbreviacion:
+        type: string
+      Descripcion:
+        type: string
+      Id:
+        type: integer
+        format: int64
+      Nombre:
+        type: string
+      NumeroOrden:
+        type: number
+        format: double
+  models.ParametroMinutaTipoContrato:
+    title: ParametroMinutaTipoContrato
+    type: object
+    properties:
+      Id:
+        type: integer
+        format: int64
+      ParametroMinuta:
+        $ref: '#/definitions/models.ParametroMinuta'
+      TipoContrato:
+        $ref: '#/definitions/models.TipoContrato'
+  models.PlantillaMinuta:
+    title: PlantillaMinuta
+    type: object
+    properties:
+      Estilo:
+        type: string
+      FechaVigencia:
+        type: string
+        format: string
+      Id:
+        type: integer
+        format: int64
+      Plantilla:
+        type: string
+      TipoContrato:
+        $ref: '#/definitions/models.TipoContrato'
+      TipoPlantilla:
+        type: string
+  models.TipoContrato:
+    title: TipoContrato
+    type: object
+    properties:
+      Estado:
+        type: boolean
+      Id:
+        type: integer
+        format: int64
+      IdGrupoTipoContrato:
+        type: integer
+        format: int64
+      TipoContrato:
+        type: string
+tags:
+- name: parametro_minuta
+  description: |
+    ParametroMinutaController operations for ParametroMinuta
+- name: parametro_minuta_tipo_contrato
+  description: |
+    ParametroMinutaTipoContratoController operations for ParametroMinutaTipoContrato
+- name: tipo_contrato
+  description: |
+    TipoContratoController operations for TipoContrato
+- name: plantilla_minuta
+  description: |
+    PlantillaMinutaController operations for PlantillaMinuta
