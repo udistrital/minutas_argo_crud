@@ -11,7 +11,7 @@ import (
 )
 
 type PlantillaMinuta struct {
-	Id            int           `orm:"column(id);pk"`
+	Id            int           `orm:"column(id);pk;auto"`
 	TipoContrato  *TipoContrato `orm:"column(tipo_contrato);rel(fk)"`
 	TipoPlantilla string        `orm:"column(tipo_plantilla);null"`
 	Plantilla     string        `orm:"column(plantilla);null"`
