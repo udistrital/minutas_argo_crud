@@ -48,7 +48,7 @@ Cada tabla tiene sus metodos
 dependiendo de cualquiera usar lo define al momento de consumir el servicio, los endpoint a los cuales apuntar son los siguientes:
 
 ||End Point|
-|----------------|-------------------------------|------------------------|
+|----------------|------------------------|
 | **parametro_minuta** | `[host de la maquina]:[puerto]/v1/parametro_minuta` |
 | **parametro_minuta_tipo_contrato** | `[host de la maquina]:[puerto]/v1/parametro_minuta_tipo_contrato`|
 | **tipo_contrato** | `[host de la maquina]:[puerto]/v1/tipo_contrato` |
