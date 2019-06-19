@@ -760,7 +760,7 @@
                 },
                 "FechaVigencia": {
                     "type": "string",
-                    "format": "string"
+                    "format": "datetime"
                 },
                 "Id": {
                     "type": "integer",
