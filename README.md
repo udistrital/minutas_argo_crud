@@ -9,20 +9,13 @@
 
 La base de datos ya esta desplegada en local de la ofinina para usarla y conectarse se deben solicitar las credenciales respectivas.
 
-# Instalación
-Para instalar el proyecto de debe relizar lo siguientes pasos:
+## Requerimientos
 
-## Opción 1
+- [Postgres](https://www.postgresql.org/)
 
-Ejecutar desde la terminal 'go get repositorio':
-```javascript
-go get github.com/udistrital/minutas_argo_crud
-```
+ - [Golang](https://github.com/udistrital/introduccion_oas/blob/master/instalacion_de_herramientas/golang.md)
 
-esto dejara el proyecto en el direcorio 
-```javascript
-$GOPATH/src/github.com/udistrital/minutas_argo_crud
-```
+- [Beego y Bee](https://github.com/udistrital/introduccion_oas/blob/master/instalacion_de_herramientas/beego.md)
 
 # Ejecucion del proyecto
 
