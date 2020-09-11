@@ -1,48 +1,93 @@
 # minutas_argo_crud
 
-**minutas_argo_crud**, CRUD para la gestion de plantillas de Argo. El proyecto está escrito en el lenguaje Go, generado mediante el **[framework beego](https://beego.me/)**.
 
-### Modelo de Datos
-![](modelo.png)
-
-### Base de datos.
-
-La base de datos ya esta desplegada en local de la ofinina para usarla y conectarse se deben solicitar las credenciales respectivas.
-
-## Requerimientos
-
-- [Postgres](https://www.postgresql.org/)
-
- - [Golang](https://github.com/udistrital/introduccion_oas/blob/master/instalacion_de_herramientas/golang.md)
-
-- [Beego y Bee](https://github.com/udistrital/introduccion_oas/blob/master/instalacion_de_herramientas/beego.md)
-
-# Ejecucion del proyecto
-
-para ejecutar el proyecto no es suficiente con `bee run` es necesario un cuerpo de ejecucion en el cual se ingresen los valores de las variables necesarias
+CRUD para la gestion de plantillas de Argo.
 
 
+## Especificaciones Técnicas
 
-```javascript
-MINUTAS_ARGO_CRUD_DB_NAME=[nombre de la base de datos] MINUTAS_ARGO_CRUD_DB_PASS=[contraseña de acceso] MINUTAS_ARGO_CRUD_DB_URL=[url o host de la base de datos] MINUTAS_ARGO_CRUD_DB_USER=[usuario con permisos sobre la base de datos] MINUTAS_ARGO_CRUD_HTTP_PORT=[puerto por el que se escuchara] bee run -downdoc=true -gendoc=true
+### Tecnologías Implementadas y Versiones
+* [Golang](https://github.com/udistrital/introduccion_oas/blob/master/instalacion_de_herramientas/golang.md)
+* [BeeGo](https://github.com/udistrital/introduccion_oas/blob/master/instalacion_de_herramientas/beego.md)
+* [Docker](https://docs.docker.com/engine/install/ubuntu/)
+* [Docker Compose](https://docs.docker.com/compose/)
+
+### Variables de Entorno
+```shell
+MINUTAS_ARGO_CRUD_HTTP_PORT=[nombre de la base de datos]
+MINUTAS_ARGO_CRUD_DB_USER=[password del usuario]
+MINUTAS_ARGO_CRUD_DB_PASS=[direccion de la base de datos]
+MINUTAS_ARGO_CRUD_DB_URL=[usuario con acceso a la base de datos]
+ENTRADAS_CRUD_PGSCHEMA=[esquema donde se ubican las tablas]
+MINUTAS_ARGO_CRUD_DB_NAME=[puerto de ejecucion] bee run
+```
+
+**NOTA:** Las variables se pueden ver en el fichero conf/app.conf y están identificadas con MINUTAS_ARGO_CRUD_...
+
+### Ejecución del Proyecto
+```shell
+#1. Obtener el repositorio con Go
+go get github.com/udistrital/minutas_argo_crud
+
+#2. Moverse a la carpeta del repositorio
+cd $GOPATH/src/github.com/udistrital/minutas_argo_crud
+
+# 3. Moverse a la rama **develop**
+git pull origin develop && git checkout develop
+
+# 4. alimentar todas las variables de entorno que utiliza el proyecto.
+MINUTAS_ARGO_CRUD_HTTP_PORT=8080 MINUTAS_ARGO_CRUD_DB_URL=127.0.0.1:27017 MINUTAS_ARGO_CRUD_HTTP_PORT_SOME_VARIABLE=some_value bee run
+```
+### Ejecución Dockerfile
+```shell
+# docker build --tag=minutas_argo_crud . --no-cache
+# docker run -p 80:80 minutas_argo_crud
 ```
 
 
+### Ejecución docker-compose
+```shell
+#1. Clonar el repositorio
+git clone -b develop https://github.com/udistrital/minutas_argo_crud
 
-### EndPoints
+#2. Moverse a la carpeta del repositorio
+cd minutas_argo_crud
 
-Cada tabla tiene sus metodos 
+#3. Crear un fichero con el nombre **custom.env**
+# En windows ejecutar:* ` ni custom.env`
+touch custom.env
 
-- GetAll
-- GetOne
-- Put
-- Delete
+#4. Crear la network **back_end** para los contenedores
+docker network create back_end
 
-dependiendo de cualquiera usar lo define al momento de consumir el servicio, los endpoint a los cuales apuntar son los siguientes:
+#5. Ejecutar el compose del contenedor
+docker-compose up --build
 
-||End Point|
-|----------------|------------------------|
-| **parametro_minuta** | `[host de la maquina]:[puerto]/v1/parametro_minuta` |
-| **parametro_minuta_tipo_contrato** | `[host de la maquina]:[puerto]/v1/parametro_minuta_tipo_contrato`|
-| **tipo_contrato** | `[host de la maquina]:[puerto]/v1/tipo_contrato` |
-| **plantilla_minuta** | `[host de la maquina]:[puerto]/v1/plantilla_minuta` |
+#6. Comprobar que los contenedores estén en ejecución
+docker ps
+```
+
+### Ejecución Pruebas
+
+Pruebas unitarias
+```shell
+# Not Data
+```
+## Estado CI
+
+| Develop | Relese 0.0.1 | Master |
+| -- | -- | -- |
+| [![Build Status](https://hubci.portaloas.udistrital.edu.co/api/badges/udistrital/minutas_argo_crud/status.svg?ref=refs/heads/develop)](https://hubci.portaloas.udistrital.edu.co/udistrital/minutas_argo_crud) | [![Build Status](https://hubci.portaloas.udistrital.edu.co/api/badges/udistrital/minutas_argo_crud/status.svg?ref=refs/heads/release/0.0.1)](https://hubci.portaloas.udistrital.edu.co/udistrital/minutas_argo_crud) | [![Build Status](https://hubci.portaloas.udistrital.edu.co/api/badges/udistrital/minutas_argo_crud/status.svg)](https://hubci.portaloas.udistrital.edu.co/udistrital/minutas_argo_crud) |
+
+## Modelo de Datos
+[Modelo de Datos API CRUD Novedades](modelo.png)
+
+## Licencia
+
+This file is part of minutas_argo_crud.
+
+minutas_argo_crud is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+
+minutas_argo_crud is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License along with minutas_argo_crud. If not, see https://www.gnu.org/licenses/.
